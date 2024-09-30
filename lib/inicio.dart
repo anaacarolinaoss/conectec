@@ -4,59 +4,56 @@ import 'package:conectec/configuracao.dart';
 import 'package:conectec/eventos.dart';
 import 'package:conectec/perfil.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Home Screen',
-      home: HomeScreen(),
-      debugShowCheckedModeBanner: false,
-    );
-  }
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
+class _HomeScreenState extends State<HomeScreen> {
+  String? _iconperfilUrl;
 
-class HomeScreen extends StatelessWidget {
+  @override
+  void initState() {
+    super.initState();
+    _loadIconPerfilUrl();
+  }
+
+  Future<void> _loadIconPerfilUrl() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _iconperfilUrl = prefs.getString('iconperfilUrl');
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        
-       title: Text ('CONECTEC',
-       style: TextStyle(color: Colors.white),),
-       backgroundColor: Color.fromARGB(255, 100, 21, 18),
-       actions: [
-          
-         
-               IconButton(
-      icon: Icon(Icons.settings,
-      color: Colors.white,), // Add a settings icon
-      onPressed: () {
-
-       Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) =>Configuracao()),
-                          );
-        
-     
-      },
-             ),       ],
-      
+        title: Text('CONECTEC',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Color.fromARGB(255, 100, 21, 18),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.settings,
+              color: Colors.white,), // Add a settings icon
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Configuracao()),
+              );
+            },
+          ),
+        ],
       ),
-            
-        
       body: Padding(
         padding: const EdgeInsets.only(top: 03),
         child: Column(
           
           children: [
-            // Quatro botões na linha de baixo
+            
         
             Container(
               color: Color.fromARGB(255, 100, 21, 18),
@@ -159,6 +156,7 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
+  
     );
   }
 }
