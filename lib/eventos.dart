@@ -21,7 +21,7 @@ class _EventosState extends State<Eventos> {
       padding: EdgeInsets.all(32),
       child: Column(
         children: [
-          Text("")
+          Text("CONFIRA ALGUNS DE NOSSOS EVENTOS !"),
         ],
          ),
      ),
