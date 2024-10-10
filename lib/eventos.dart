@@ -21,7 +21,10 @@ class _EventosState extends State<Eventos> {
       padding: EdgeInsets.all(32),
       child: Column(
         children: [
+          
           Text("CONFIRA ALGUNS DE NOSSOS EVENTOS !"),
+          
+          Image.asset('assets/imagens/junina.jpeg'),
         ],
          ),
      ),
