@@ -53,7 +53,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
     dependencies:
-    table_calendar: ^3.0.8
+    dependencies:
+    calendar_date_picker2: ^1.1.7
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
