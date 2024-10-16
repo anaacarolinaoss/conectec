@@ -4,7 +4,7 @@ import 'package:conectec/configuracao.dart';
 import 'package:conectec/eventos.dart';
 import 'package:conectec/perfil.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
   @override

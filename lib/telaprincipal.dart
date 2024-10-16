@@ -60,8 +60,6 @@ class TelaPrincipal extends StatelessWidget {
                 ),
                   
                   
-                
-                SizedBox(height: 15,),
                 ElevatedButton(
                   style:  ElevatedButton.styleFrom (
                     minimumSize: Size(300, 60),
