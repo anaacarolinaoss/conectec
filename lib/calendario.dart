@@ -1,4 +1,7 @@
+// ignore_for_file: dead_code
+
 import 'package:flutter/material.dart';
+
 
 class Calendario extends StatefulWidget {
   const Calendario({super.key});
@@ -8,6 +11,8 @@ class Calendario extends StatefulWidget {
 }
 
 class _CalendarioState extends State<Calendario> {
+  DateTime today = DateTime.now();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,15 +21,22 @@ class _CalendarioState extends State<Calendario> {
        , style: TextStyle(color: Colors.white),),
       backgroundColor: const Color.fromARGB(255, 126, 28, 24),
       
+  
+    
      ),
-     body: Container(
-      padding: EdgeInsets.all(32),
-      child: Column(
-        children: [
-          Text("")
-        ],
-         ),
-     ),
-    );
+      );
+      Widget content(){
+        return Column(
+          children: [
+            Text("123"),
+            Container(
+            child: CalendarDatePicker(
+              initialDate: today, firstDate: DateTime.utc(2024,25,26), 
+              lastDate: DateTime.utc(2030,3,14), onDateChanged: (DateTime value) {  },),
+            ),
+          ],
+        );
+      }
+
   }
 }
