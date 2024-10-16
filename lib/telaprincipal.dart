@@ -58,31 +58,6 @@ class TelaPrincipal extends StatelessWidget {
                 ),
                 SizedBox(height: 20,
                 ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom (
-                    minimumSize: Size(300, 60),
-                    textStyle: TextStyle(fontSize: 25),
-                      primary: Colors.transparent,
-                      onPrimary: 
-                      Colors.white,
-                  
-                  
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Admin()),
-                    );
-                  },
-                  child:  Text(
-                    'Cadastrar como Administrador',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.normal,
-
-                    ),
-                    ),
-                    ),
                   
                   
                 
@@ -104,7 +79,7 @@ class TelaPrincipal extends StatelessWidget {
                     );
                   },
                   child: const Text(
-                    'Cadastrar como usuário',
+                    'Cadastrar',
                     style: 
                     TextStyle(fontSize: 20,
                       fontWeight: FontWeight.normal,
